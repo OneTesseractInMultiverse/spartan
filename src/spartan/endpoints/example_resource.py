@@ -19,12 +19,12 @@ from flask_jwt_extended import (
 # GET: /
 # --------------------------------------------------------------------------
 @app.route('/', methods=['GET'])
-@jwt_required
-@require_claims('can_create_data')
+# @jwt_required
+# @require_claims('can_create_data')
 def get_root():
     return jsonify(
         {
-            "ApiPlatform": "Chroma - A Flask Boilerplate for Microservices",
+            "ApiPlatform": "Spartan 1.0",
             "IP Address": request.remote_addr,
             "User Agent": request.headers.get('User-Agent')
         }

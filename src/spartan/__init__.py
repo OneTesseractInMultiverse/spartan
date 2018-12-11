@@ -39,7 +39,7 @@ app.debug = True
     able to authenticate the call and verify JWT Tokens, we must setup 
 """
 
-jwt = JWTManager(app)
+# jwt = JWTManager(app)
 
 # ------------------------------------------------------------------------------
 # LOAD RESOURCE ENDPOINTS
