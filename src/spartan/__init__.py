@@ -1,25 +1,26 @@
-import logging
-
-from flask import (
-    Flask
-)
-from flask_jwt_extended import (
-    JWTManager
-)
-from spartan.background_tasks import (
-    init_async_service
+from sanic import (
+    Sanic,
+    Blueprint
 )
 
+from sanic_cors import CORS
 
 # ------------------------------------------------------------------------------
 # SETUP GENERAL APPLICATION
 # ------------------------------------------------------------------------------
 
 __version__ = '1.0.0'
-app = Flask('spartan')
-app.logger.info("")
+
+app = Sanic('spartan', strict_slashes=True)
+
+v1 = Blueprint('/api/v1')
+
 app.config.from_object('config')
+app.blueprint(v1)
+
 app.debug = True
+
+CORS(app)
 
 # ------------------------------------------------------------------------------
 # LOGGING
