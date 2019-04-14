@@ -1,7 +1,7 @@
 import os
 from spartan import app
 
-__author__ = "PyMicron"
+__author__ = "Subvertic Lab"
 __version__ = "1.0.0"
 
 if __name__ == "__main__":
